@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="vendor/jquery-3.4.1.js"></script>
+
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+    <link rel="stylesheet" href="css/guide.min.css">
+    <title>اپلیکیشن آینه</title>
+</head>
+
+<body>
+    <div class="navbar" style="user-select: none;">
+
+        <a id="index" class="hvr-underline-from-center">منوی اصلی</a>
+        <a id="contact" class="hvr-underline-from-center">ارتباط با ما</a>
+
+    </div>
+
+
+    <div class="main-menu">
+
+
+        <script>
+            $('#index').click(() => {
+                location.href = 'index.html'
+            })
+
+            $('#contact').click(() => {
+                location.href = 'contact.html'
+            })
+        </script>
+
+
+        <div class="content">
+            <div class="Guide">
+
+                <h2>راهنمای انجام تست: </h2>
+
+                <p>
+                    برای پی بردن به شخصیت خود، در پاسخ به سؤالات گزینه ای را انتخاب کنید که ویژگیها و شخصیت واقعی شما را توصیف کند و نه ویژگیهایی که می خواهید داشته باشید و یا دیگران از شما توقع دارند. پاسخ درست یا غلط وجود ندارد. به هیچ وجه گزینه ای را که در مورد شما صدق
+                    نمی کند، به این دلیل که فکر می کنید گزینه بهتری است انتخاب نکنید، چون در این صورت نتیجه بدست آمده مغایر با خود واقعی شما خواهد بود.
+                    <br>پاسخهای شما فقط بیانگر چگونگی نگرش و نگاه شما به محیط اطراف و چگونگی تصمیم گیری شما در امور مختلف است. بنابراین صادقانه پاسخ دهید تا بتوانید به شخصیت واقعی خود پی ببرید. اگر پاسخ سوالی را اصلا نمی دانید، یکی را انتخاب کنید. سوالات
+                    طوری طراحی شده که اشتباهات جزئی در نتیجه نهایی در نظر گرفته نمی شود.
+                    <br>این نکته رو بگم که شخصیت یا تیپ شخصیتی بهتر نداریم،ما تو این تست به شما ثابت میکنیم هر تیپ شخصیتی میتونه بهترین باشه،فقط باید در جای درست خودش قرار بگیره.
+                    <br><br>موفق باشید</p>
+
+            </div>
+            <div class="anim"></div>
+        </div>
+    </div>
+
+    <footer>
+        <span>v1.0.0 - طراحی و توسعه توسط تیم Ivy Coders </span>
+    </footer>
+</body>
+
+</html>

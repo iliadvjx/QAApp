@@ -1,5 +1,4 @@
-const  electron = require('electron')
-const { shell } = require('electron')
+const electron = require('electron')
 const { app, BrowserWindow, ipcMain } = electron
 // var ipc = require('ipc')
 require('electron-reload')(__dirname, { ignored: /data|[\/\\]\./ });
@@ -21,12 +20,12 @@ function createWindow() {
         //  transparent:true, ۵۶۳×۷۳۸
         webPreferences: {
             nodeIntegration: true,
-            // devTools: false
+            devTools: false
         }
     })
     win.maximize()
     win.setResizable(true)
-    // win.removeMenu()
+    win.removeMenu()
         // and load the index.html of the app.
     win.loadFile('index.html')
 
@@ -39,12 +38,6 @@ function createWindow() {
 }
 
 app.on('ready', () => setTimeout(createWindow, 100))
-
-
-ipcMain.on('openPage', (event, arg) => {
-    // console.log(event , arg)
-    shell.openExternal(arg)
-})
 
 ipcMain.on('reload', (event, arg) => {
     win.reload()

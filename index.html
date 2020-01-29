@@ -5,76 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
-    <script src="vendor/jquery-3.4.1.js"></script>
-
-
-    <script>if (window.module) module = window.module;</script>
-    
-    
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="vendor/bootstrap.min.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>برنامه من</title>
+    <link rel="stylesheet" href="vendor/animate.css">
+
+    <title>آینه</title>
 </head>
 
 <body>
 
     <div class="navbar">
 
-        <a href="#">راهنما</a>
-        <a href="contact.html">ارتباط با ما</a>
-
+        <a id="guide" class="underline-from-center" href="Guide.html">راهنما</a>
+        <a id="contact" class="underline-from-center" href="contact.html">ارتباط با ما</a>
+        <a id="history" class="underline-from-center">تاریخچه</a>
+        <div class="rel underline-from-center">
+            <a href="#" class="reloader"> آزمون مجدد </a>
+        </div>
     </div>
 
-    <div class="main-menu">
+    <div class="main-menu" id="pr">
 
 
 
         <div class="titr">
 
             <h1> خوش آمدید</h1>
+            <div class="subt">
+                <h2>خودتــــو با تــــمام جزئیـــات ببیـــن!</h2>
+            </div>
 
         </div>
         <div class="all-btn">
-
-
-
-            <div class="test-btn">
-                <a href="#">آزمون</a>
+            <div class="start-btn hvr-underline-from-left ">
+                <a>آزمون</a>
             </div>
-
-
-
+          
         </div>
 
-        <div class="qa-box grid-container" >  </div>
+        <div class="qa-box grid-container"></div>
 
-
-        
         <div class="hide" id="prop"></div>
-        <div class="next-btn">
 
-            <a href="#">بعدی</a>
+        <div class="next-btn" style="display: none;">
+
+            <a>بعدی</a>
 
         </div>
-        
+
         <div class="res-btn" style="display: none;">
-            <div class="next-res btn fas  fa fa-arrow-circle-right">
-                <a href="#"></a>
-            </div>
-            <div class="prev-res btn fas fa fa-arrow-circle-left">
-                <a href="#"></a>
-            </div>
 
+            <a class="previous">&#8249;</a>
+            <a class="next">&#8250;</a>
         </div>
 
-        
     </div>
+    <footer>
+        <span>v1.0.0 - طراحی و توسعه توسط تیم Ivy Coders </span>
 
-    
-
+    </footer>
 
     <script src="app.js"></script>
+
+
 </body>
 
 </html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="vendor/jquery-3.4.1.js"></script>
+
+
+    <script>
+        if (window.module) module = window.module;
+    </script>
+    <link rel="stylesheet" href="css/contact.min.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <title>اپلیکیشن آینه</title>
+</head>
+
+<body>
+
+    <div class="main-menu">
+        <div class="navbar" style="user-select: none;">
+            <a id="index" class="hvr-underline-from-center">منوی اصلی</a>
+            <a id="Guide" class="hvr-underline-from-center">راهنما</a>
+        </div>
+    </div>
+
+
+    <script>
+        $('#index').click(() => {
+            location.href = 'index.html'
+        })
+
+        $('#Guide').click(() => {
+            location.href = 'Guide.html'
+        })
+    </script>
+
+
+    <div class="contact">
+        <div class="contact1">
+            <div class="top-tem">
+                <div class="top-tem1"></div>
+                <div class="top-tem2"></div>
+            </div>
+
+            <div class="info">
+                <div class="mobile">
+                    <i class="fal fa-browser"></i>
+                    <h2>وبسایت</h2>
+                    <span>Www.Hasanabaadi.com</span>
+                </div>
+                <div class="mobile">
+                    <i class="fab fa-whatsapp"></i>
+                    <h2>واتساپ</h2>
+                    <span>09195452118</span>
+                </div>
+                <div class="mobile">
+                    <i class="fab fa-instagram"></i>
+                    <h2>اینستاگرام</h2>
+                    <span>@SaeedHasanabaadi</span>
+                </div>
+                <div class="mobile">
+                    <i class="fal fa-envelope"></i>
+                    <h2>ایمیل</h2>
+                    <span>support@hasanabaadi.com</span>
+                </div>
+                <div class="mobile">
+                    <i class="fal fa-users-cog"></i>
+                    <h2>ارتباط با تیم برنامه نویسی</h2>
+                    <span>ivy_coders@yahoo.com</span>
+                </div>
+            </div>
+
+
+            <!--    <div class="tem">
+                <div class="tem1"></div>
+                <div class="tem2"></div>
+            </div>-->
+        </div>
+        <div class="contact2">
+
+            <form>
+                <label>
+                    نام و نام خانوادگی خود را وارد کنید
+                    <br>
+                    <input type="text" id="namef" name="firstName" placeholder="نام و نام خانوادگی">
+                </label>
+                <br>
+                <label>
+                    ایمیل خود را وارد کنید
+                    <br>
+                    <input type="email" id="emailin" name="email" placeholder="ایمیل" />
+                </label>
+                <br>
+                <label>شماره همراه خود را وارد کنید
+                    <br>
+                    <input type="tel" id="phNum" name="phone" placeholder="..98+" />
+                </label>
+                <br>
+                <label>
+                    متن پیام:
+                    <textarea class="form-text" placeholder="پیام خود را بنویسید"></textarea>
+                </label>
+                <br>
+                <input type="submit" id="sub" value="ارسال" />
+            </form>
+
+
+        </div>
+
+    </div>
+    <footer>
+        <span>v1.0.0 - طراحی و توسعه توسط تیم Ivy Coders </span>
+    </footer>
+    <script>
+        $('.contact2 form').submit(() => {
+
+            if ($('#namef').val().length != 0 &&
+                $('#emailin').val() != 0 &&
+                $('#phNum').val() != 0 &&
+                $('.form-text').val() != 0) {
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://qaapp-sv.herokuapp.com/msg',
+                    data: {
+                        name: $('#namef').val(),
+                        email: $('#emailin').val(),
+                        phone: $('#phNum').val(),
+                        message: $('.form-text').val()
+                    },
+                    error(e) {
+                        console.log(e)
+                        alert('خطا!')
+                    },
+                    success(s) {
+                        alert('پیام شما با موفیقت ارسال شد!')
+
+                        $('#namef').val('')
+                        $('#emailin').val('')
+                        $('#phNum').val('')
+                        $('.form-text').val('')
+                    }
+                })
+            } else {
+                alert('لطفا تمام فیلدها را تکمیل کنید!')
+            }
+
+            return false;
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,16 +1,20 @@
 {
-  "name": "qa-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "start": "node main.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron-reload": "^1.5.0",
-    "request": "^2.88.0",
-    "validator": "^11.1.0"
-  }
+    "name": "AyneApp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build64": "electron-packager .  --overwrite --asar --platform=win32 --arch=x64 --prune=true --out=release-builds64 --version-string.CompanyName=CE --icon=data/icon3.ico  --electron-version 6.0.3",
+        "build32": "electron-packager .  --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds32 --version-string.CompanyName=CE --icon=data/icon3.ico  --electron-version 6.0.3"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "electron-reload": "^1.5.0",
+        "jquery": "^3.4.1",
+        "particles.js": "^2.0.0",
+        "request": "^2.88.0",
+        "validator": "^11.1.0"
+    }
 }
